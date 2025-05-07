@@ -2,10 +2,14 @@ import express from 'express'
 import mongoose from 'mongoose';
 import bodyParser from 'express'
 import userRouter from './routes/user.js'
+import contactRouter from './routes/contact.js'
+
 const app = express();
 
 app.use(bodyParser.json())
 app.use('/api/user', userRouter )
+app.use('/api/contact', contactRouter )
+
 
 //home route
 app.get('/', (req,res) => {
